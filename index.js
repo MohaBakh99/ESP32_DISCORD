@@ -1,13 +1,18 @@
-const app = require('express');
-//const fs = require('fs');
+const http = require('http');
+const express = require('express');
+const app = express();
+const fs = require('fs');
 const path = require('path');
 
-//const host = "127.0.0.1";
+//const host = "79.116.129.168";
 const port = '8080';
-const pathDir = path.join('__dirname', '/');
+
+var SLED = "";
 
 app.get('/', (req, res)=>{
-    res.send('hello esp32!');
+    res.writeHead(200, {"Content-type": "text/html"});
+    const html = fs.readFileSync(__dirname + '/index.html', 'utf-8');
+    res.end(html);
 });
 
 app.post('/', (req, res)=>{

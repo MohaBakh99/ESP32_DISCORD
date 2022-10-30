@@ -5,8 +5,10 @@ const config = require('./config.json');
 const TOKEN = config.TOKEN;
 const PREFIX = config.PREFIX;
 
+const {SLED} = require('./index.js');
+
 bot.on('ready', ()=>{
-    console.log('El bot esta ready!')
+    console.log('El bot esta ready!' + SLED);
 });
 
 bot.on('message', (msg)=>{
