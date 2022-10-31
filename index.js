@@ -11,7 +11,7 @@ var SLED = "";
 
 app.get('/', (req, res)=>{
     res.writeHead(200, {"Content-type": "text/html"});
-    const html = fs.readFileSync(__dirname + '/index.html', 'utf-8');
+    const html = fs.readFileSync(__dirname + '/info.html', 'utf-8');
     res.end(html);
 });
 
