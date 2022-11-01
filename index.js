@@ -1,18 +1,18 @@
-const http = require('http');
+//const http = require('http');
 const express = require('express');
 const app = express();
-const fs = require('fs');
+//const fs = require('fs');
 const path = require('path');
 
 //const host = "79.116.129.168";
-const port = '8080';
+const port = process.env.port;
 
 var SLED = "";
 
 app.get('/', (req, res)=>{
-    res.writeHead(200, {"Content-type": "text/html"});
-    const html = fs.readFileSync(__dirname + '/info.html', 'utf-8');
-    res.end(html);
+    res.writeHead(200, {"Content-type": "text/plane"});
+    //const html = fs.readFileSync(__dirname + '/info.html', 'utf-8');
+    res.end("ESP32");
 });
 
 app.post('/', (req, res)=>{
